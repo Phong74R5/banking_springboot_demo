@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bank</title>
+    <style>
+      th,
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <th:block th:include="/_menu"></th:block>
+    <h2>Accounts</h2>
+    <div>
+      <table border="1">
+        <tr>
+          <th>ID</th>
+          <th>Full Name</th>
+          <th>Balance</th>
+        </tr>
+        <tr th:each="accountInfo : ${accountInfos}">
+          <td th:utext="${accountInfo.id}">...</td>
+          <td th:utext="${accountInfo.fullName}">...</td>
+          <td th:utext="${accountInfo.balance}">...</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
